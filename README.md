@@ -237,6 +237,7 @@ pip install -r requirements.txt
 streamlit run home_page.py
 ```
 
+---
 
 ## 🛠 Tech Stack
 
