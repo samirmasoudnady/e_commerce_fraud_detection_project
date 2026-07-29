@@ -8,7 +8,7 @@ from time import sleep
 st.markdown(""""<h2 style='text-align:center;color:#00E5FF;'>🧠 E-Commerce Fraud Detection Model </h2>""", unsafe_allow_html=True)
 st.markdown("<hr>", unsafe_allow_html=True)
 # ========== SHOW CLEAN DATASET ==========
-cl_df = pd.read_csv('cleaned_df.csv').drop(columns=["is_fraud"], axis=1)
+cl_df = pd.read_csv("clean_df.csv.zip").drop(columns=["is_fraud"], axis=1)
 st.dataframe(cl_df)
 st.markdown("<hr>", unsafe_allow_html=True)  
 
