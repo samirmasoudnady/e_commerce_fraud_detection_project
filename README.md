@@ -237,24 +237,7 @@ pip install -r requirements.txt
 streamlit run home_page.py
 ```
 
-**Suggested `requirements.txt`:**
 ```
-streamlit
-pandas
-numpy
-scikit-learn
-catboost
-xgboost
-lightgbm
-imbalanced-learn
-category_encoders
-matplotlib
-seaborn
-plotly
-```
-
----
-
 ## 🛠 Tech Stack
 
 `Python` · `Pandas` · `NumPy` · `Scikit-learn` · `CatBoost` · `XGBoost` · `LightGBM` · `imbalanced-learn (SMOTE)` · `category_encoders` · `Matplotlib` / `Seaborn` / `Plotly` · `Streamlit`
