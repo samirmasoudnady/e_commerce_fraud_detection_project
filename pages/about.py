@@ -3,7 +3,7 @@ import streamlit as st
 from time import sleep
 import pandas as pd
 
-df = pd.read_csv('transactions.csv')
+df = pd.read_csv("clean_df.csv.zip")
     
 # ========== PAGE TITLE ==========
 st.markdown("""
