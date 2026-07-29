@@ -237,7 +237,7 @@ pip install -r requirements.txt
 streamlit run home_page.py
 ```
 
-```
+
 ## 🛠 Tech Stack
 
 `Python` · `Pandas` · `NumPy` · `Scikit-learn` · `CatBoost` · `XGBoost` · `LightGBM` · `imbalanced-learn (SMOTE)` · `category_encoders` · `Matplotlib` / `Seaborn` / `Plotly` · `Streamlit`
