@@ -5,7 +5,7 @@ import pandas as pd
 from time import sleep
 
 # ========== PAGE TITLE ==========
-st.markdown(""""<h2 style='text-align:center;color:#00E5FF;'>🧠 E-Commerce Fraud Detection Model </h2>""", unsafe_allow_html=True)
+st.markdown("""<h2 style='text-align:center;color:#00E5FF;'>🧠 E-Commerce Fraud Detection Model </h2>""", unsafe_allow_html=True)
 st.markdown("<hr>", unsafe_allow_html=True)
 # ========== SHOW CLEAN DATASET ==========
 cl_df = pd.read_csv("clean_df.csv.zip").drop(columns=["is_fraud"], axis=1)
