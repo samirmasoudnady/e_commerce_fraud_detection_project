@@ -8,7 +8,7 @@ import seaborn as sns
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv('cleaned_df.csv')
+df = pd.read_csv("clean_df.csv.zip")
 # ========== PAGE TITLE ==========
 st.markdown("""<h2 style='text-align:center;color:#00E5FF;'>📊 Exploratory Data Analysis(EDA)</h2>""", unsafe_allow_html=True)
 st.markdown("<hr>", unsafe_allow_html=True)
