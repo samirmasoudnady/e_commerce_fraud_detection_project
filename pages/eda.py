@@ -1,6 +1,5 @@
 
 import streamlit as st
-from ydata_profiling import ProfileReport
 import matplotlib.pyplot as plt
 import plotly.express as px 
 from time import sleep
