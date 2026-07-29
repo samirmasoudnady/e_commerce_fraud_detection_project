@@ -5,6 +5,7 @@ matplotlib==3.10.6
 seaborn==0.13.2
 plotly==6.3.0
 scikit-learn==1.7.2
+category-encoders==2.8.1
 catboost==1.2.8
 imbalanced-learn==0.14.0
 joblib==1.5.2
