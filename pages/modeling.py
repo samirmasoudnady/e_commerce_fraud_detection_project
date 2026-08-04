@@ -44,7 +44,7 @@ with tab1:
     predict_button = st.button('Detect Transaction Type', key="predict_btn")
     if predict_button:
         # Predict probability
-        fraud_prob = model.predict_proba(custom_data)[:, 1][0]
+        fraud_prob = model.predict_proba(new_data)[:, 1][0]
         # Apply Threshold
         prediction = int(fraud_prob >= threshold)
         # Display probability
