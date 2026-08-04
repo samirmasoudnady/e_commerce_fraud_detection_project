@@ -6,3 +6,6 @@ https://www.kaggle.com/datasets/umuttuygurr/e-commerce-fraud-detection-dataset
 
 # Streamlit App
 https://ecommercefrauddetectionproject7.streamlit.app
+
+# NoteBook link in drive
+https://drive.google.com/file/d/1XF18JF5jezRRKVyr82g19AlP9BXImPY_/view?usp=drive_link
