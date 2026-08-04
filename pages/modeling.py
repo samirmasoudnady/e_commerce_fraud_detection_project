@@ -23,7 +23,7 @@ st.markdown("<hr>", unsafe_allow_html=True)
 
 @st.cache_resource
 def load_model():
-    return joblib.load("catboost_th.pkl")
+    return joblib.load("Catboost_Model.pkl")
 
 tab1, tab2 = st.tabs(["📂 Select from dataset", "📝 Create new data"])
 
