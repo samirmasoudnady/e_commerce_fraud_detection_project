@@ -13,7 +13,7 @@ cl_df = pd.read_csv("clean_df.csv.zip").drop(columns=["is_fraud"], axis=1)
 @st.cache_data
 def load_fraud_data():
     df = pd.read_csv("clean_df.csv.zip")
-    return df[df["is_fraud"] == 1]
+    return df[df["is_fraud"] == "Fraud"]
 fraud_df = load_fraud_data()
 st.dataframe(cl_df)
 st.markdown("<hr>", unsafe_allow_html=True)  
