@@ -10,7 +10,7 @@ st.markdown("<hr>", unsafe_allow_html=True)
 # ========== SHOW CLEAN DATASET ==========
 
 cl_df = pd.read_csv("clean_df.csv.zip").drop(columns=["is_fraud"], axis=1)
-fraud_df = pd.read_csv('cleaned_df.csv.zip').query("is_fraud == 1")
+fraud_df = pd.read_csv("clean_df.csv.zip").query("is_fraud == 1")
 st.dataframe(cl_df)
 st.markdown("<hr>", unsafe_allow_html=True)  
 st.markdown("""<h4 style="color:white;text-align:center;">⚠️ This the only Fraud rows in our dataset </h4>""", unsafe_allow_html=True)
