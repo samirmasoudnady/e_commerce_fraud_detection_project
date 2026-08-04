@@ -8,9 +8,14 @@ from time import sleep
 st.markdown("""<h2 style='text-align:center;color:#00E5FF;'>🧠 E-Commerce Fraud Detection Model </h2>""", unsafe_allow_html=True)
 st.markdown("<hr>", unsafe_allow_html=True)
 # ========== SHOW CLEAN DATASET ==========
+
 cl_df = pd.read_csv("clean_df.csv.zip").drop(columns=["is_fraud"], axis=1)
+fraud_df = pd.read_csv('cleaned_df.csv.zip').query("is_fraud == 1")
 st.dataframe(cl_df)
 st.markdown("<hr>", unsafe_allow_html=True)  
+st.markdown("""<h4 style="color:white;text-align:center;">⚠️ This the only Fraud rows in our dataset </h4>""", unsafe_allow_html=True)
+st.dataframe(fraud_df)
+st.markdown("<hr>", unsafe_allow_html=True)
 
 @st.cache_resource
 def load_model():
@@ -34,16 +39,19 @@ with tab1:
 
     predict_button = st.button('Detect Transaction Type', key="predict_btn")
     if predict_button:
-        proba = model.predict_proba(new_data)[:, 1]
-        result = (proba >= threshold).astype(int)
-
-        if result[0] == 0:
-            st.write("🛍️ This Operation is Normal Transaction")
+        # Predict probability
+        fraud_prob = model.predict_proba(custom_data)[:, 1][0]
+        # Apply Threshold
+        prediction = int(fraud_prob >= threshold)
+        # Display probability
+        st.metric(
+                  "Fraud Probability",
+                  f"{fraud_prob * 100:.2f}%")
+        # Display result
+        if prediction == 0:
+            st.success("🛍️ This Operation is Normal Transaction")
         else:
-            st.write("⚠️ This Operation is Fraud Transaction")
-
-        st.write(f"🔮 Fraud Probability =>> { proba[0]:.2f}")
-        st.write(model.predict_proba(new_data))
+            st.error("⚠️ This Operation is Fraud Transaction")
 
 with tab2:
     st.markdown("""<h4 style="color:white;text-align:center;">📝 Create new data</h4>""", unsafe_allow_html=True)
@@ -108,16 +116,19 @@ with tab2:
 
     predict_button = st.button('Detect Transaction Type', key="predict_btn2")
     if predict_button:
-        proba = model.predict_proba(custom_data)[:, 1]
-        result = (proba >= threshold).astype(int)
-
-        if result[0] == 0:
-            st.write("🛍️ This Operation is Normal Transaction")
+        # Predict probability
+        fraud_prob = model.predict_proba(custom_data)[:, 1][0]
+        # Apply Threshold
+        prediction = int(fraud_prob >= threshold)
+        # Display probability
+        st.metric(
+                  "Fraud Probability",
+                  f"{fraud_prob * 100:.2f}%")
+        # Display result
+        if prediction == 0:
+            st.success("🛍️ This Operation is Normal Transaction")
         else:
-            st.write("⚠️ This Operation is Fraud Transaction")
-
-        st.write(f"🔮 Fraud Probability =>> { proba[0]:.2f}")
-        st.write(model.predict_proba(custom_data))
+            st.error("⚠️ This Operation is Fraud Transaction")
 
 def go_to(page):
     st.session_state["fade"] = True
