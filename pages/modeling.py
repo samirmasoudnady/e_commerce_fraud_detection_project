@@ -47,15 +47,14 @@ with tab1:
         fraud_prob = model.predict_proba(new_data)[:, 1][0]
         # Apply Threshold
         prediction = int(fraud_prob >= threshold)
-        # Display probability
-        st.metric(
-                  "Fraud Probability",
-                  f"{fraud_prob * 100:.2f}%")
         # Display result
         if prediction == 0:
             st.success("🛍️ This Operation is Normal Transaction")
         else:
             st.error("⚠️ This Operation is Fraud Transaction")
+        # Display probability   
+        st.write(f"🔮 Fraud Probability =>> {fraud_prob * 100:.2f}%")
+        st.write(model.predict_proba(new_data))
 
 with tab2:
     st.markdown("""<h4 style="color:white;text-align:center;">📝 Create new data</h4>""", unsafe_allow_html=True)
@@ -124,15 +123,14 @@ with tab2:
         fraud_prob = model.predict_proba(custom_data)[:, 1][0]
         # Apply Threshold
         prediction = int(fraud_prob >= threshold)
-        # Display probability
-        st.metric(
-                  "Fraud Probability",
-                  f"{fraud_prob * 100:.2f}%")
         # Display result
         if prediction == 0:
             st.success("🛍️ This Operation is Normal Transaction")
         else:
             st.error("⚠️ This Operation is Fraud Transaction")
+        # Display probability
+        st.write(f"🔮 Fraud Probability =>> {fraud_prob * 100:.2f}%")
+        st.write(model.predict_proba(custom_data))
 
 def go_to(page):
     st.session_state["fade"] = True
